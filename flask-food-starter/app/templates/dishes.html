@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>菜品列表</title>
+  </head>
+  <body>
+    <h1>菜品列表</h1>
+    <a href="/">返回首页</a>
+    <a href="/dishes/new">新增菜品</a>
+
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>名称</th>
+          <th>分类</th>
+          <th>价格</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dish in dishes %}
+        <tr>
+          <td>{{ dish.id }}</td>
+          <td>{{ dish.name }}</td>
+          <td>{{ dish.category }}</td>
+          <td>{{ dish.price }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
