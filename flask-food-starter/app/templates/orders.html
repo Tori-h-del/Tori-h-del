@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>订单列表</title>
+  </head>
+  <body>
+    <h1>订单列表</h1>
+    <a href="/">返回首页</a>
+    <a href="/orders/new">新增订单</a>
+
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>下单人</th>
+          <th>菜品</th>
+          <th>数量</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.customer_name }}</td>
+          <td>{{ dishes.get(order.dish_id).name if dishes.get(order.dish_id) else '未知菜品' }}</td>
+          <td>{{ order.quantity }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

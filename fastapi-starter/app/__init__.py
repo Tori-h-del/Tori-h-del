@@ -1,1 +1,0 @@
-"""Beginner FastAPI starter package."""
