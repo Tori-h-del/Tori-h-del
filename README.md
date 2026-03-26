@@ -3,7 +3,6 @@
 - 🌱 I’m currently learning AI
 -      
 -# 我的学习博客 - 一个Flask练手项目
-&gt; 大三学生做的个人博客，用来记录学习笔记和刷题过程。慢慢加功能中，目前能跑就行 😅
 
 **在线演示**: [待部署]  
 **技术栈**: Flask + SQLite + Bootstrap 5
