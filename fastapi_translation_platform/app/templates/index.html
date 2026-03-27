@@ -1,79 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ data.project_name }} - 大学生翻译平台</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}" />
-</head>
-<body>
-    <div class="container">
-        <header class="hero card">
-            <p class="eyebrow">大学生翻译兼职平台创业规划书（初步）</p>
-            <h1>{{ data.project_name }}</h1>
-            <p class="slogan">“{{ data.slogan }}”</p>
-            <div class="meta-grid">
-                <span>创始人：{{ data.founder }}</span>
-                <span>启动时间：{{ data.start_time }}</span>
-                <span>版本：{{ data.version }}</span>
-            </div>
-        </header>
+    <title>{{ data.project_name }}｜大学生翻译兼职平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card hero">
+        <p class="badge">Python Flask 初步框架</p>
+        <h1>{{ data.project_name }}</h1>
+        <p class="tagline">{{ data.tagline }}</p>
+        <p class="value">{{ data.value_statement }}</p>
+      </section>
 
-        <section class="card">
-            <h2>1. 项目定位与核心价值</h2>
-            <div class="table-like">
-                <div class="row head">
-                    <span>痛点</span>
-                    <span>解决方案</span>
-                </div>
-                {% for item in data.pain_points %}
-                <div class="row">
-                    <span>{{ item.pain }}</span>
-                    <span>{{ item.solution }}</span>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
+      <section class="card">
+        <h2>核心价值</h2>
+        <ul>
+          {% for item in data.core_values %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </section>
 
-        <section class="grid-two">
-            <article class="card">
-                <h2>2. 目标用户（学生端）</h2>
-                <ul>
-                    {% for item in data.student_users %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </article>
+      <section class="grid">
+        <article class="card">
+          <h2>学生端能力</h2>
+          <ul>
+            {% for item in data.student_features %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </article>
 
-            <article class="card">
-                <h2>3. 目标用户（企业端）</h2>
-                <ul>
-                    {% for item in data.enterprise_users %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </article>
-        </section>
+        <article class="card">
+          <h2>企业端能力</h2>
+          <ul>
+            {% for item in data.enterprise_features %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </article>
+      </section>
 
-        <section class="grid-two">
-            <article class="card">
-                <h2>4. 收入结构</h2>
-                <ul>
-                    {% for item in data.revenue %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </article>
-
-            <article class="card">
-                <h2>5. MVP 功能清单（FAST 初步）</h2>
-                <ul>
-                    {% for item in data.features %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </article>
-        </section>
-    </div>
-</body>
+      <section class="card">
+        <h2>MVP 模块路线</h2>
+        <ol>
+          {% for item in data.mvp_modules %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ol>
+      </section>
+    </main>
+  </body>
 </html>
