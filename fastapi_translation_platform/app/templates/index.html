@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ data.project_name }} - 大学生翻译平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <header class="hero card">
+            <p class="eyebrow">大学生翻译兼职平台创业规划书（初步）</p>
+            <h1>{{ data.project_name }}</h1>
+            <p class="slogan">“{{ data.slogan }}”</p>
+            <div class="meta-grid">
+                <span>创始人：{{ data.founder }}</span>
+                <span>启动时间：{{ data.start_time }}</span>
+                <span>版本：{{ data.version }}</span>
+            </div>
+        </header>
+
+        <section class="card">
+            <h2>1. 项目定位与核心价值</h2>
+            <div class="table-like">
+                <div class="row head">
+                    <span>痛点</span>
+                    <span>解决方案</span>
+                </div>
+                {% for item in data.pain_points %}
+                <div class="row">
+                    <span>{{ item.pain }}</span>
+                    <span>{{ item.solution }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="grid-two">
+            <article class="card">
+                <h2>2. 目标用户（学生端）</h2>
+                <ul>
+                    {% for item in data.student_users %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>3. 目标用户（企业端）</h2>
+                <ul>
+                    {% for item in data.enterprise_users %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+        </section>
+
+        <section class="grid-two">
+            <article class="card">
+                <h2>4. 收入结构</h2>
+                <ul>
+                    {% for item in data.revenue %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>5. MVP 功能清单（FAST 初步）</h2>
+                <ul>
+                    {% for item in data.features %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+        </section>
+    </div>
+</body>
+</html>
