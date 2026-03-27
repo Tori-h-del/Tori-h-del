@@ -3,23 +3,29 @@
 ## 核心定位
 **翻译兼职 + 志愿时长**：学生拿钱的同时还能拿官方志愿时长，这是其他平台给不了的核心价值。
 
-## 为什么你会遇到 `TemplateNotFound: index.html`
-常见原因是：启动命令和当前目录不一致，导致 Flask 在错误目录里找模板。
-本项目已经改为**绝对路径加载模板和静态文件**，避免这个问题。
+## 你这次报错的原因
+你截图里的错误是：
+`Could not import 'fastapi_translation_platform.app.app'`
+
+这通常是下面两种情况之一：
+1. 命令里模块名拼写错（最常见，`fastapi` / `fastapi` 少字母或多字母）。
+2. 启动目录不对，导致 Python 找不到项目包。
 
 ## 1) 安装依赖
 ```bash
-pip install -r requirements.txt
+pip install -r fastapi_translation_platform/requirements.txt
 ```
 
-## 2) 推荐启动方式（在仓库根目录执行）
+## 2) 最稳妥启动方式（推荐）
+在**仓库根目录**执行：
 ```bash
-flask --app fastapi_translation_platform.app.app run --debug
+python run.py
 ```
 
-## 3) 备用启动方式
+## 3) Flask 命令方式（可选）
+在**仓库根目录**执行：
 ```bash
-python -m fastapi_translation_platform.app.app
+flask --app fastapi_translation_platform.app.app:app run --debug
 ```
 
 ## 4) 访问地址
