@@ -1,6 +1,6 @@
 # Flask 美食平台（无 CSS）
 
-这是一个给初学者的 Flask 练手项目，主题是**美食平台**。
+这是一个Flask 练手项目，主题是**美食平台**。
 后端保持简单，前端只用基础 HTML，不引入 CSS，方便先把路由、表单、模板和数据流学明白。
 
 ## 1. 学到什么
@@ -59,7 +59,7 @@ python run.py
 - `GET /api/dishes`：获取菜品 JSON
 - `GET /api/orders`：获取订单 JSON
 
-## 6. 新手下一步建议
+## 6. 下一步
 
 1. 把 `app/data.py` 替换成 SQLite（如 Flask-SQLAlchemy）。
 2. 给订单增加总价计算。
